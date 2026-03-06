@@ -1,3 +1,4 @@
+#include <algorithm>
 #include <cstdlib>
 #include <ctime>
 #include <iomanip>
@@ -47,9 +48,9 @@ int main() {
 
   std::cout << "\n========= FINAL SCOREBOARD =========\n";
   for (Character *c : characters) {
-    std::cout << std::setw(10) << c->getName() << std::setw(5) << c->getHealth()
-              << std::setw(10) << (c->isAlive() ? "Alive" : "Defeated")
-              << std::endl;
+    std::cout << std::setw(10) << c->getName() << std::setw(5)
+              << std::max(c->getHealth(), 0) << std::setw(10)
+              << (c->isAlive() ? "Alive" : "Defeated") << std::endl;
     delete c;
   }
 
