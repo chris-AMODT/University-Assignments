@@ -3,4 +3,6 @@
 class Mage : public Character {
 public:
   Mage(std::string);
+  int attack() const;
+  int specialAbility() const;
 };

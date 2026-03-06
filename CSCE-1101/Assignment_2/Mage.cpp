@@ -1,5 +1,6 @@
 #include "Mage.h"
-#include <iostream>
-Mage::Mage(std::string name) : Character(name, 50, 10) {
-  std::cout << "Mage Created";
-}
+Mage::Mage(std::string name) : Character(name, 50, 10) {}
+
+int Mage::attack() const { return getAttack(); }
+
+int Mage::specialAbility() const { return (getAttack() + 25); }
