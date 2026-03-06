@@ -1,5 +1,5 @@
 #include "Warrior.h"
-Warrior::Warrior(std::string name) : Character(name, 100, 7) {}
+Warrior::Warrior(std::string name) : Character(name, 100, 15, "Power Strike") {}
 
 int Warrior::attack() const { return getAttack(); }
 

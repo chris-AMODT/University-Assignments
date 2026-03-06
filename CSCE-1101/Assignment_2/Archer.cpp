@@ -1,7 +1,7 @@
 #include "Archer.h"
 #include <string>
 
-Archer::Archer(std::string name) : Character(name, 8, 8) {}
+Archer::Archer(std::string name) : Character(name, 80, 20, "Double Shot") {}
 
 int Archer::attack() const { return getAttack(); }
 

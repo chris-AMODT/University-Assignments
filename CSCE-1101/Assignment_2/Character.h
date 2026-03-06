@@ -1,3 +1,4 @@
+#pragma once
 #include <string>
 
 class Character {
@@ -6,13 +7,15 @@ private:
   int health;
   int attackPower;
   static int characterCount;
+  std::string specialName;
 
 protected:
   int getAttack() const;
-  int getHealth() const;
 
 public:
-  Character(std::string, int, int);
+  std::string getSpecial() const;
+  int getHealth() const;
+  Character(std::string, int, int, std::string);
   virtual ~Character();
   std::string getName() const;
   virtual int attack() const = 0;

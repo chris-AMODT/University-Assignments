@@ -1,21 +1,21 @@
 #include "Character.h"
-#include <iostream>
+#include <string>
 
-int Character::getAttack() const { return Character::attackPower; }
-int Character::getHealth() const { return Character::health; }
+int Character::characterCount = 0;
 
-Character::Character(std::string name, int health, int attack)
-    : name(name), health(health), attackPower(attack) {
+int Character::getAttack() const { return attackPower; }
+int Character::getHealth() const { return health; }
+std::string Character::getSpecial() const { return specialName; }
+Character::Character(std::string name, int health, int attack,
+                     std::string special)
+    : name(name), health(health), attackPower(attack), specialName(special) {
   Character::characterCount++;
 }
 
-Character::~Character() {
-  Character::characterCount--;
-  std::cout << "Character Destroyed" << std::endl;
-}
+Character::~Character() { Character::characterCount--; }
 
-std::string Character::getName() const { return Character::name; }
-void Character::takeDamage(int damage) { Character::health -= damage; }
+std::string Character::getName() const { return name; }
+void Character::takeDamage(int damage) { health -= damage; }
 
-bool Character::isAlive() { return (Character::health > 0); }
-int Character::getCharacterCount() { return Character::characterCount; }
+bool Character::isAlive() { return (health > 0); }
+int Character::getCharacterCount() { return characterCount; }
